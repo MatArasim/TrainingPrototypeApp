@@ -2,7 +2,7 @@
   <div class="mx-auto">
     <div class="flex justify-center">
       <div class="border-blue-500 rounded-full border overflow-hidden shadow-lg">
-        <RocketLaunchIcon class="text-blue-600 w-60 h-60"></RocketLaunchIcon>
+        <CameraIcon class="text-blue-200 w-60 h-60"></CameraIcon>
       </div>
     </div>
     <div class="container mx-auto p-4">
@@ -10,36 +10,40 @@
         <div class="profile-info">
           <h2 class="text-3xl text-blue-600 flex justify-between font-semibold">
             Profil Użytkownika
-            <router-link to="/edit"><PencilIcon class="h-5 w-5" /></router-link>
           </h2>
           <div class="my-4 flex justify-between">
             <span class="text-2xl font-medium text-blue-600">Waga: </span>
-            <span class="text-xl justify-end">{{ userProfile.weight }} kg</span>
+            <input class="bg-white border justify-end" placeholder="KG" />
           </div>
 
           <div class="my-4 flex justify-between">
             <span class="text-2xl font-medium text-blue-600">Wzrost: </span>
-            <span class="text-xl justify-end">{{ userProfile.height }} cm</span>
+            <input class="bg-white border" placeholder="cm" type="" name="" id="" />
           </div>
 
           <div class="my-4 flex justify-between">
             <span class="text-2xl font-medium text-blue-600">Wiek: </span>
-            <span class="text-xl justify-end">{{ userProfile.age }} lat/a</span>
+            <input class="bg-white border" placeholder="" type="" name="" id="" />
           </div>
 
           <div class="my-4 flex justify-between">
             <span class="text-2xl font-medium text-blue-600">Cel wagowy: </span>
-            <span class="text-xl justify-end">{{ userProfile.weightGoal }} kg</span>
+            <input class="bg-white border" placeholder="KG" type="" name="" id="" />
           </div>
 
           <div class="my-4 flex justify-between">
             <span class="text-2xl font-medium text-blue-600">Cel odległość: </span>
-            <span class="text-xl justify-end">{{ userProfile.distanceRun }} km</span>
+            <input class="bg-white border" placeholder="KM" type="" name="" id="" />
           </div>
           <div class="my-4">
             <span class="text-2xl font-medium text-blue-600">Biega w: </span>
             <div class="text-xl my-4 mx-2">
               <WeekComponent></WeekComponent>
+            </div>
+            <div class="flex justify-center">
+              <router-link to="/"
+                ><CheckCircleIcon class="text-green-600 w-7 h-7" />
+              </router-link>
             </div>
           </div>
         </div>
@@ -49,7 +53,7 @@
 </template>
 
 <script setup>
-import { RocketLaunchIcon, PencilIcon } from "@heroicons/vue/20/solid";
+import { CameraIcon, CheckCircleIcon } from "@heroicons/vue/20/solid";
 import WeekComponent from "../components/WeekComponent.vue";
 import { ref } from "vue";
 

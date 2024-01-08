@@ -2,7 +2,7 @@
   <div class="mx-auto">
     <div class="flex justify-center">
       <div class="border-blue-500 rounded-full border overflow-hidden shadow-lg">
-        <FireIcon class="text-red-600 w-60 h-60"></FireIcon>
+        <FlagIcon class="text-blue-600 w-60 h-60"></FlagIcon>
       </div>
     </div>
     <div class="flex justify-center my-4">
@@ -16,7 +16,7 @@
                 :style="{ width: dailyProgress + '%' }"
               ></div>
             </div>
-            <p class="text-gray-700">{{ dailyCalories }} / {{ dailyGoal }} kcal</p>
+            <p class="text-gray-700">{{ dailyDistance }} / {{ dailyGoal }} kcal</p>
           </div>
 
           <div class="space-y-2">
@@ -27,7 +27,7 @@
                 :style="{ width: weeklyProgress + '%' }"
               ></div>
             </div>
-            <p class="text-gray-700">{{ weeklyCalories }} / {{ weeklyGoal }} kcal</p>
+            <p class="text-gray-700">{{ weeklyDistance }} / {{ weeklyGoal }} kcal</p>
           </div>
           <div class="space-y-2">
             <div class="text-lg font-semibold">Miesięczne</div>
@@ -37,7 +37,7 @@
                 :style="{ width: monthlyProgress + '%' }"
               ></div>
             </div>
-            <p class="text-gray-700">{{ monthlyCalories }} / {{ monthlyGoal }} kcal</p>
+            <p class="text-gray-700">{{ monthlyDistance }} / {{ monthlyGoal }} kcal</p>
           </div>
         </div>
       </div>
@@ -46,18 +46,18 @@
 </template>
 
 <script setup>
-import { FireIcon } from "@heroicons/vue/20/solid";
+import { FlagIcon } from "@heroicons/vue/20/solid";
 import { ref, computed } from "vue";
 
-const dailyCalories = ref(500);
-const weeklyCalories = ref(3500);
-const monthlyCalories = ref(14000);
+const dailyDistance = ref(10);
+const weeklyDistance = ref(10);
+const monthlyDistance = ref(10);
 
-const dailyGoal = ref(600);
-const weeklyGoal = ref(4200);
-const monthlyGoal = ref(16800);
+const dailyGoal = ref(10);
+const weeklyGoal = ref(50);
+const monthlyGoal = ref(50);
 
-const dailyProgress = computed(() => (dailyCalories.value / dailyGoal.value) * 100);
-const weeklyProgress = computed(() => (weeklyCalories.value / weeklyGoal.value) * 100);
-const monthlyProgress = computed(() => (monthlyCalories.value / monthlyGoal.value) * 100);
+const dailyProgress = computed(() => (dailyDistance.value / dailyGoal.value) * 100);
+const weeklyProgress = computed(() => (weeklyDistance.value / weeklyGoal.value) * 100);
+const monthlyProgress = computed(() => (monthlyDistance.value / monthlyGoal.value) * 100);
 </script>
